@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const codeString = 'Edit <code>src/App.tsx</code> and save to reload.';
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          {codeString}
         </p>
         <a
           className="App-link"
