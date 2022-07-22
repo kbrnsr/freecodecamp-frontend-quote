@@ -4,7 +4,9 @@ import constants from './constants';
 function QuoteBox() {
   return (
     <div className="QuoteBox" data-testid={constants.quoteBox} id={constants.quoteBox}>
-      <p />
+      <div className="QuoteText" data-testid={constants.quoteText} id={constants.quoteText}>
+        <p />
+      </div>
     </div>
   );
 }
