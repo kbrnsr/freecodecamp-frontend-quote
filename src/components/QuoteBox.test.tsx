@@ -1,9 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import QuoteBox from './QuoteBox';
+import constants from './constants';
 
 describe('QuoteBox component', () => {
-  test('renders the main quote box', () => {
+  test('check if quotebox wrapper exists', () => {
     render(<QuoteBox />);
+    const wrapperElement = screen.queryByTestId(constants.quoteBox);
+    expect(wrapperElement).toBeInTheDocument();
   });
 });
