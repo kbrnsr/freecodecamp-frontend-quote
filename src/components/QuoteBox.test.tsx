@@ -3,30 +3,34 @@ import { render, screen } from '@testing-library/react';
 import QuoteBox from './QuoteBox';
 import constants from './constants';
 
-describe('QuoteBox component', () => {
-  test('check if quote box wrapper exists', () => {
+describe('QuoteBox structure tests', () => {
+  const {
+    quoteBox, quoteText,
+    quoteAuthor, quoteNew, quoteTweet,
+  } = constants;
+
+  beforeEach(() => {
     render(<QuoteBox />);
-    const wrapperElement = screen.queryByTestId(constants.quoteBox);
-    expect(wrapperElement).toBeInTheDocument();
   });
-  test('check if quote box text exists', () => {
-    render(<QuoteBox />);
-    const textElement = screen.queryByTestId(constants.quoteText);
-    expect(textElement).toBeInTheDocument();
+
+  test('check if wrapper element exists', () => {
+    const wrapperElement = screen.queryByTestId(quoteBox);
+    expect(wrapperElement).toBeInstanceOf(HTMLElement);
   });
-  test('check if quote box author exists', () => {
-    render(<QuoteBox />);
-    const authorElement = screen.queryByTestId(constants.quoteAuthor);
-    expect(authorElement).toBeInTheDocument();
+  test('check if text element exists', () => {
+    const textElement = screen.queryByTestId(quoteText);
+    expect(textElement).toBeInstanceOf(HTMLElement);
   });
-  test('check if clickable new quote element exists', () => {
-    render(<QuoteBox />);
-    const newQuoteElement = screen.queryByTestId(constants.quoteNew);
-    expect(newQuoteElement).toBeInTheDocument();
+  test('check if author element exists', () => {
+    const authorElement = screen.queryByTestId(quoteAuthor);
+    expect(authorElement).toBeInstanceOf(HTMLElement);
+  });
+  test('check if new quote element exists', () => {
+    const newQuoteElement = screen.queryByTestId(quoteNew);
+    expect(newQuoteElement).toBeInstanceOf(HTMLElement);
   });
   test('check if tweet element exists', () => {
-    render(<QuoteBox />);
-    const tweetElement = screen.queryByTestId(constants.quoteTweet);
-    expect(tweetElement).toBeTruthy();
+    const tweetElement = screen.queryByTestId(quoteTweet);
+    expect(tweetElement).toBeInstanceOf(HTMLElement);
   });
 });
