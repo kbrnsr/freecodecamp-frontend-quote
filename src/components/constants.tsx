@@ -4,4 +4,5 @@ export default {
   quoteAuthor: 'author',
   quoteNew: 'new-quote',
   quoteTweet: 'tweet-quote',
+  defaultText: 'Default text',
 };

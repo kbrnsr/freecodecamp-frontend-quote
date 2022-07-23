@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import constants from './constants';
 
 function QuoteBox() {
+  const {
+    quoteBox, quoteText,
+    quoteAuthor, quoteNew, quoteTweet,
+    defaultText,
+  } = constants;
+
+  // eslint-disable-next-line no-unused-vars
+  const [textContent, setTextContent] = useState(defaultText);
+
   return (
     <div
       className="QuoteBox"
-      data-testid={constants.quoteBox}
-      id={constants.quoteBox}
+      data-testid={quoteBox}
+      id={quoteBox}
     >
-      <div
+      <p
         className="QuoteText"
-        data-testid={constants.quoteText}
-        id={constants.quoteText}
-      />
+        data-testid={quoteText}
+        id={quoteText}
+      >
+        {textContent}
+      </p>
       <div
         className="QuoteAuthor"
-        data-testid={constants.quoteAuthor}
-        id={constants.quoteAuthor}
+        data-testid={quoteAuthor}
+        id={quoteAuthor}
       />
       <button
-        aria-label={constants.quoteNew}
+        aria-label={quoteNew}
         type="submit"
         className="QuoteNew"
-        data-testid={constants.quoteNew}
-        id={constants.quoteNew}
+        data-testid={quoteNew}
+        id={quoteNew}
       />
       <a
         href="index"
-        data-testid={constants.quoteTweet}
-        id={constants.quoteTweet}
+        data-testid={quoteTweet}
+        id={quoteTweet}
       >
         Tweet
       </a>
