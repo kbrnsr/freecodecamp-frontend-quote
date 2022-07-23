@@ -19,4 +19,9 @@ describe('QuoteBox component', () => {
     const authorElement = screen.queryByTestId(constants.quoteAuthor);
     expect(authorElement).toBeInTheDocument();
   });
+  test('check if clickable new quote element exists', () => {
+    render(<QuoteBox />);
+    const newQuoteElement = screen.queryByTestId(constants.quoteNew);
+    expect(newQuoteElement).toBeInTheDocument();
+  });
 });
