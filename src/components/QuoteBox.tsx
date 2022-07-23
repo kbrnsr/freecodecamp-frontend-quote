@@ -7,6 +7,7 @@ function QuoteBox() {
       <div className="QuoteText" data-testid={constants.quoteText} id={constants.quoteText} />
       <div className="QuoteAuthor" data-testid={constants.quoteAuthor} id={constants.quoteAuthor} />
       <button type="submit" className="QuoteNew" data-testid={constants.quoteNew} id={constants.quoteNew} />
+      <a data-testid={constants.quoteTweet} id={constants.quoteTweet} />
     </div>
   );
 }

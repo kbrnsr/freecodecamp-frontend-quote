@@ -24,4 +24,9 @@ describe('QuoteBox component', () => {
     const newQuoteElement = screen.queryByTestId(constants.quoteNew);
     expect(newQuoteElement).toBeInTheDocument();
   });
+  test('check if tweet element exists', () => {
+    render(<QuoteBox />);
+    const tweetElement = screen.queryByTestId(constants.quoteTweet);
+    expect(tweetElement).toBeTruthy();
+  });
 });
