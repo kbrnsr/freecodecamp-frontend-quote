@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import constants from './constants';
+import constants from '../constants';
 
 function QuoteBox() {
   const {

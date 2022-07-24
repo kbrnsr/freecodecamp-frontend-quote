@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import QuoteBox from './QuoteBox';
-import constants from './constants';
+import constants from '../constants';
 
 describe('QuoteBox structure tests', () => {
   const {
