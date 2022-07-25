@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import QuoteBox from './QuoteBox';
 import constants from '../constants';
+import testConstants from '../testConstants';
 
 describe('QuoteBox structure tests', () => {
   const {
@@ -32,5 +33,18 @@ describe('QuoteBox structure tests', () => {
   test('check if tweet element exists', () => {
     const tweetElement = screen.queryByTestId(quoteTweet);
     expect(tweetElement).toBeInstanceOf(HTMLElement);
+  });
+});
+
+describe('Quotebox first load tests', () => {
+  beforeEach(() => {
+    render(<QuoteBox />);
+  });
+  test('check if first loads of text and author appears', async () => {
+    // Render components, perform requests, receive mocked responses.
+    const { testQuotes } = testConstants;
+    const { text: text1, author: author1 } = testQuotes[0];
+    // const { text: text2, author: author2 } = quotes[0];
+    expect(screen.getByText(text1)).toBeInTheDocument();
   });
 });
