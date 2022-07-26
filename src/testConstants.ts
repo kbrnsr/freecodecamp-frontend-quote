@@ -1,7 +1,7 @@
 export default {
   testQuotes: [
     {
-      text: 'Genius is one percent inspiration'
+      text: 'Genius is one percent inspiration '
     + 'and ninety-nine percent perspiration.',
       author: 'Thomas Edison',
     },

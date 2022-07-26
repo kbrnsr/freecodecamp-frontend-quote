@@ -9,33 +9,42 @@ function QuoteBox() {
     defaultText,
   } = constants;
 
-  const [textContent, setTextContent] = useState(defaultText);
+  const [isLoading, setIsLoading] = useState(false);
+  const [quoteContent, setQuoteContent] = useState(
+    {
+      text: defaultText,
+      author: '',
+    },
+  );
   const [quotes, setQuotes] = useState([]);
 
   const setRandomQuote = () => {
     if (quotes.length > 0) {
       const quoteElem = quotes[Math.floor(Math.random() * quotes.length)];
       const {
-        // eslint-disable-next-line no-unused-vars
         text, author,
       } = quoteElem;
-      setTextContent(text);
+      setQuoteContent({ text, author });
     }
   };
 
   useEffect(() => {
     const getQuotes = async () => {
       const res = await handlers.get('/');
-      setQuotes(res.data);
+      const { data } = res;
+      setQuotes(data);
+      setIsLoading(true);
+      return data;
     };
     getQuotes();
   }, []);
 
   useEffect(() => {
-    if (quotes !== undefined) {
+    if (isLoading) {
       setRandomQuote();
+      setIsLoading(false);
     }
-  }, [quotes]);
+  }, [isLoading]);
   return (
     <div
       className="QuoteBox"
@@ -47,7 +56,7 @@ function QuoteBox() {
         data-testid={quoteText}
         id={quoteText}
       >
-        {textContent}
+        {quoteContent.text}
       </p>
       <div
         className="QuoteAuthor"
