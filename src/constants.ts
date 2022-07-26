@@ -5,4 +5,5 @@ export default {
   quoteNew: 'new-quote',
   quoteTweet: 'tweet-quote',
   defaultText: 'Default text',
+  baseUrl: 'https://type.fit/api/quotes',
 };

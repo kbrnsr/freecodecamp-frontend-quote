@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import constants from '../constants';
+import handlers from '../handlers/http';
 
 function QuoteBox() {
   const {
@@ -8,9 +9,33 @@ function QuoteBox() {
     defaultText,
   } = constants;
 
-  // eslint-disable-next-line no-unused-vars
   const [textContent, setTextContent] = useState(defaultText);
+  const [quotes, setQuotes] = useState([]);
 
+  const setRandomQuote = () => {
+    if (quotes.length > 0) {
+      const quoteElem = quotes[Math.floor(Math.random() * quotes.length)];
+      const {
+        // eslint-disable-next-line no-unused-vars
+        text, author,
+      } = quoteElem;
+      setTextContent(text);
+    }
+  };
+
+  useEffect(() => {
+    const getQuotes = async () => {
+      const res = await handlers.get('/');
+      setQuotes(res.data);
+    };
+    getQuotes();
+  }, []);
+
+  useEffect(() => {
+    if (quotes !== undefined) {
+      setRandomQuote();
+    }
+  }, [quotes]);
   return (
     <div
       className="QuoteBox"
