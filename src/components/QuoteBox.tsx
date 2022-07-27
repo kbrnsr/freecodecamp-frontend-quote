@@ -6,14 +6,14 @@ function QuoteBox() {
   const {
     quoteBox, quoteText,
     quoteAuthor, quoteNew, quoteTweet,
-    defaultText,
+    defaultText, defaultAuthor,
   } = constants;
 
   const [isLoading, setIsLoading] = useState(false);
   const [quoteContent, setQuoteContent] = useState(
     {
       text: defaultText,
-      author: '',
+      author: defaultAuthor,
     },
   );
   const [quotes, setQuotes] = useState([]);
@@ -58,11 +58,13 @@ function QuoteBox() {
       >
         {quoteContent.text}
       </p>
-      <div
+      <p
         className="QuoteAuthor"
         data-testid={quoteAuthor}
         id={quoteAuthor}
-      />
+      >
+        {quoteContent.author}
+      </p>
       <button
         aria-label={quoteNew}
         type="submit"
