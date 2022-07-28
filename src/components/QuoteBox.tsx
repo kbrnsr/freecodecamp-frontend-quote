@@ -5,7 +5,7 @@ import handlers from '../handlers/http';
 function QuoteBox() {
   const {
     quoteBox, quoteText,
-    quoteAuthor, quoteNew, quoteTweet,
+    quoteAuthor, quoteNew, quoteNewText, quoteTweet,
     defaultText, defaultAuthor,
   } = constants;
 
@@ -20,12 +20,22 @@ function QuoteBox() {
 
   const setRandomQuote = () => {
     if (quotes.length > 0) {
-      const quoteElem = quotes[Math.floor(Math.random() * quotes.length)];
-      const {
-        text, author,
-      } = quoteElem;
-      setQuoteContent({ text, author });
+      let quoteNotTheSame = false;
+      const { text: oldText, author: oldAuthor } = quoteContent;
+      while (!quoteNotTheSame) {
+        const quoteElem = quotes[Math.floor(Math.random() * quotes.length)];
+        const {
+          text: newText, author: newAuthor,
+        } = quoteElem;
+        if ((oldText !== newText) && (oldAuthor !== newAuthor)) {
+          setQuoteContent({ text: newText, author: newAuthor });
+          quoteNotTheSame = true;
+        }
+      }
     }
+  };
+  const handleNewQuote = () => {
+    setRandomQuote();
   };
 
   useEffect(() => {
@@ -66,12 +76,14 @@ function QuoteBox() {
         {quoteContent.author}
       </p>
       <button
-        aria-label={quoteNew}
-        type="submit"
+        onClick={() => handleNewQuote()}
         className="QuoteNew"
         data-testid={quoteNew}
         id={quoteNew}
-      />
+        type="button"
+      >
+        {quoteNewText}
+      </button>
       <a
         href="index"
         data-testid={quoteTweet}
