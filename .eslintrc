@@ -35,6 +35,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "max-len": ["error", { "code": 80 }],
         "import/no-unresolved": 0,
         "react/jsx-filename-extension": [
             1, { "extensions": [".jsx", ".tsx"] }
