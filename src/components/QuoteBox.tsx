@@ -85,9 +85,11 @@ function QuoteBox() {
         {quoteNewText}
       </button>
       <a
-        href="index"
+        href="https://twitter.com/intent/tweet"
         data-testid={quoteTweet}
         id={quoteTweet}
+        target="_blank"
+        rel="noreferrer"
       >
         Tweet
       </a>

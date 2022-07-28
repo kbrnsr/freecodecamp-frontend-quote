@@ -19,7 +19,8 @@ describe('Quotebox elements existence', () => {
     const authorElement = await screen.findByTestId(quoteAuthor);
     const newQuoteElement = await screen
       .findByRole('button', { name: quoteNewText });
-    const tweetElement = await screen.findByTestId(quoteTweet);
+    const tweetElement = await screen
+      .findByRole('link');
 
     /* TODO Why do I need this... */
     await act(async () => {
@@ -69,5 +70,20 @@ describe('Quotebox button', () => {
       .getByRole('button', { name: quoteNewText }));
     expect(screen.queryByText(textOld)).not.toBeInTheDocument();
     expect(screen.queryByText(authorOld)).not.toBeInTheDocument();
+  });
+});
+
+describe('Quotebox twitter', () => {
+  test('check twitter href', async () => {
+    render(<QuoteBox />);
+    const tweetElement = await screen.findByTestId(quoteTweet);
+
+    /* TODO Why do I need this... */
+    await act(async () => {
+    });
+
+    expect(tweetElement)
+      .toHaveAttribute('href', expect
+        .stringContaining('twitter.com/intent/tweet'));
   });
 });
