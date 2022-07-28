@@ -2,11 +2,11 @@ name: CD
 
 on:
   push:
-    branches: [ "gh-pages" ]
+    branches: [ "main" ]
   pull_request:
     types:
       - closed
-    branches: [ "gh-pages" ]
+    branches: [ "main" ]
 
 jobs:
   CD:
