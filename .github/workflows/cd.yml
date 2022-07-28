@@ -4,6 +4,8 @@ on:
   push:
     branches: [ "gh-pages" ]
   pull_request:
+    types:
+      - closed
     branches: [ "gh-pages" ]
 
 jobs:
