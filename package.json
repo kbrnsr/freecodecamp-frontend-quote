@@ -1,6 +1,7 @@
 {
   "name": "freecodecamp-frontend-quote",
   "version": "0.1.0",
+  "homepage": "https://kbrnsr.github.io/quote-generator",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
