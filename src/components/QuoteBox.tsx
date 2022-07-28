@@ -60,6 +60,7 @@ function QuoteBox() {
       className="QuoteBox"
       data-testid={quoteBox}
       id={quoteBox}
+      style={{ textAlign: 'center' }}
     >
       <p
         className="QuoteText"

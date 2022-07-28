@@ -87,3 +87,14 @@ describe('Quotebox twitter', () => {
         .stringContaining('twitter.com/intent/tweet'));
   });
 });
+
+describe('Quotebox styling', () => {
+  test('check wrapper styling', async () => {
+    render(<QuoteBox />);
+    /* TODO Why do I need this... */
+    await act(async () => {
+    });
+    const wrapperElement = await screen.findByTestId(quoteBox);
+    expect(wrapperElement).toHaveStyle('text-align: center');
+  });
+});
