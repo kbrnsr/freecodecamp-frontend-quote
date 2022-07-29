@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running:
+```shell
+npx create-react-app my-app --template typescript
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Random quote generator
 
-## Available Scripts
+A random quote generator for practicing React development,
+based on the description and tests from [freecodecamp.org's frontend project: Build a Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine)\
+Please visit https://kbrnsr.github.io/freecodecamp-frontend-quote
+for a working example
 
-In the project directory, you can run:
+![app example image](assets/images/example.png)
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
+Assuming that all commands are run from project root.
+
+Install the project by running this command from the project root:
+```shell
+npm install
+```
+
+Run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```shell
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Run tests by running:
+```shell
+npm test
+```
 
-### `npm test`
+The only real configuration you might need to do is changing `baseUrl` in
+[src/constants.ts](src/constants.ts). It refers to a REST endpoint that should return a payload in the format:
+```json
+[
+  {
+    text: 'Genius is one percent inspiration and ninety-nine percent perspiration.',
+    author: 'Thomas Edison',
+  },
+  {
+    text: 'You can observe a lot just by watching.',
+    author: 'Yogi Berra',
+  }
+]
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note that the payload should be in this format, if you need to change the endpoint URL then 
+I would recommend transforming the payload in the handler.
 
-### `npm run build`
+## CI/CD
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Not much to say here, see [.github/workflows/ci.yml](.github/workflows/ci.yml) for continuous integration and [.github/workflows/cd.yml](.github/workflows/cd.yml) for continuous deployment.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The CD process deploys to Github Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech used
 
-### `npm run eject`
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org/)
+- [Create React App](https://create-react-app.dev/)
+- [Axios](https://axios-http.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Mock Service Worker (MSW)](https://mswjs.io/)
+- [ESlint](https://eslint.org/)
+- [TypeScript ESLint](https://typescript-eslint.io/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Credits
+- Kent C. Dodds for his blog post [Stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch) which introduced me to `MSW` and `react-testing-library`.
+- SergeyWebPro for [providing a free endpoint for inspirational quotes](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373).
