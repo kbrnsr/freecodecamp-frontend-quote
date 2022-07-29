@@ -5,7 +5,7 @@ based on the description and tests from [freecodecamp.org's frontend project: Bu
 Please visit https://kbrnsr.github.io/freecodecamp-frontend-quote
 for a working example
 
-![app example image](/assets/images/example.png)
+![app example image](assets/images/example.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running:
 
@@ -34,7 +34,7 @@ npm test
 ```
 
 The only real configuration you might need to do is changing `baseUrl` in
-(src/constants.ts). It refers to a REST endpoint that should return a payload in the format:
+[src/constants.ts](src/constants.ts). It refers to a REST endpoint that should return a payload in the format:
 ```json
 [
   {
@@ -65,22 +65,3 @@ I would recommend transforming the payload in the handler.
 ## Credits
 - Kent C. Dodds for his blog post [Stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch) which introduced me to `MSW` and `react-testing-library`.
 - SergeyWebPro for [providing a free endpoint for inspirational quotes](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373).
-
-
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
