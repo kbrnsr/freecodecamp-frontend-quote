@@ -50,6 +50,12 @@ The only real configuration you might need to do is changing `baseUrl` in
 Note that the payload should be in this format, if you need to change the endpoint URL then 
 I would recommend transforming the payload in the handler.
 
+## CI/CD
+
+Not much to say here, see [.github/workflows/ci.yml](.github/workflows/ci.yml) for continuous integration and [.github/workflows/cd.yml](.github/workflows/cd.yml) for continuous deployment.
+
+The CD process deploys to Github Pages
+
 ## Tech used
 
 - [Node.js](https://nodejs.org/en/)
