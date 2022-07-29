@@ -1,3 +1,8 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running:
+```shell
+npx create-react-app my-app --template typescript
+```
+
 # Random quote generator
 
 A random quote generator for practicing React development,
@@ -6,12 +11,6 @@ Please visit https://kbrnsr.github.io/freecodecamp-frontend-quote
 for a working example
 
 ![app example image](assets/images/example.png)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running:
-
-```shell
-npx create-react-app my-app --template typescript
-```
 
 ## Setup
 
@@ -22,7 +21,7 @@ Install the project by running this command from the project root:
 npm install
 ```
 
-Runs the app in the development mode.\
+Run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ```shell
 npm start
@@ -47,6 +46,7 @@ The only real configuration you might need to do is changing `baseUrl` in
   }
 ]
 ```
+
 Note that the payload should be in this format, if you need to change the endpoint URL then 
 I would recommend transforming the payload in the handler.
 
