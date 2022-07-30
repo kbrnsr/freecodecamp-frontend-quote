@@ -1,6 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) by running the 
+following command from the parent folder:
 ```shell
-npx create-react-app my-app --template typescript
+npx create-react-app freecodecamp-frontend-quote --template typescript
 ```
 
 # Random quote generator
